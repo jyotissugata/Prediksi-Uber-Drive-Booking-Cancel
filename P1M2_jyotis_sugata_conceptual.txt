@@ -1,0 +1,54 @@
+1. Latar Belakang Adanya Bagging & Cara Kerjanya
+
+	- Latar belakang
+
+		- Pada banyak kasus, algoritma machine learning (misalnya decision tree) memiliki high variance, artinya hasil prediksi bisa sangat berbeda jika dataset sedikit berubah.
+		- Untuk mengurangi variansi ini, diperkenalkan teknik ensemble learning, yaitu menggabungkan banyak model agar hasilnya lebih stabil.
+		- Salah satu metode ensemble yang pertama kali populer adalah Bagging (Bootstrap Aggregating) yang diperkenalkan oleh Leo Breiman (1996).
+
+	- Cara Kerja Bagging
+
+		1. Dari dataset asli, dibuat beberapa subset data dengan teknik bootstrap sampling (sampling dengan pengembalian).
+		2. Untuk tiap subset, dilatih sebuah model (biasanya decision tree).
+		3. Semua model hasil pelatihan digabungkan:
+			- Untuk klasifikasi, hasil prediksi diambil berdasarkan majority voting.
+			- Untuk regresi, hasil prediksi diambil berdasarkan average dari semua model.
+			→ Hasil akhir lebih stabil, mengurangi variansi, dan meningkatkan akurasi.
+
+
+2. Perbedaan Cara Kerja Random Forest vs XGBoost
+
+- Random Forest
+	- Termasuk bagging method.
+	- Membuat banyak decision tree secara paralel.
+	- Setiap tree dilatih dengan data bootstrap sample (sampling dengan pengembalian).
+	- Pada setiap split node, hanya sebagian fitur yang dipilih secara acak → mendorong keragaman antar tree.
+	- Hasil akhir diperoleh dengan klasifikasi
+	- Fokus: mengurangi variance, sehingga model lebih stabil dan tahan terhadap overfitting.
+	- Sifat: sederhana, cepat, dan relatif mudah dituning, tapi akurasi kadang kalah dibanding boosting.
+
+- XGBoost (Extreme Gradient Boosting)
+
+	- Termasuk boosting method (lebih tepatnya gradient boosting).
+	- Membangun decision tree secara berurutan (tidak paralel).
+	- Setiap tree baru dilatih untuk memperbaiki error (residual) dari tree sebelumnya.
+	- Gunakan gradient descent untuk meminimalkan fungsi loss → lebih sistematis dibanding AdaBoost.
+	- Ada regularization (L1 & L2) untuk mengontrol kompleksitas tree → mencegah overfitting.
+	- Prediksi akhir adalah kombinasi hasil semua tree dengan pembobotan.
+	- Fokus: mengurangi bias dan error, sehingga biasanya menghasilkan performa yang lebih tinggi daripada Random Forest.
+	- Sifat: lebih kompleks, training lebih lama, tapi sering kali lebih akurat dan dipakai pada kompetisi machine learning (Kaggle, dsb).
+
+3. Apa itu Cross Validation
+
+- Cross Validation (CV) adalah teknik evaluasi model untuk mengukur seberapa baik model akan bekerja pada data baru (generalization).
+- Cara paling umum: k-fold cross validation
+	1. Dataset dibagi menjadi k bagian (fold).
+	2. Model dilatih pada k-1 bagian, lalu diuji pada bagian yang tersisa.
+	3. Proses diulang k kali dengan fold yang berbeda sebagai data uji.
+	4. Hasil evaluasi adalah rata-rata dari semua percobaan.
+Tujuan:
+	- Mengurangi bias karena hanya pakai satu train-test split.
+	- Memberi gambaran lebih stabil tentang performa model.
+
+
+
