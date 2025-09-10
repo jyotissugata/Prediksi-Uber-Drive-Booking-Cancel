@@ -30,7 +30,7 @@ Jika prediksi ini akurat, sistem dapat:
     st.write(''' 
             Data booking uber didapat dari [kaggle.com](https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard/data)
 ''')
-    data = pd.read_csv('src\dataset.csv')
+    data = pd.read_csv('dataset.csv')
     st.dataframe(data)
 
     # visualisasi

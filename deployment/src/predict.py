@@ -5,7 +5,7 @@ import pickle
 
 def run():
 
-    with open('./model_akhir.pkl', 'rb') as file_1:
+    with open('model_akhir.pkl', 'rb') as file_1:
         model = pickle.load(file_1)
 
     st.title("Predict Booking Cancel")
