@@ -1,1 +1,8 @@
+Dataset
+https://www.kaggle.com/datasets/yashdevladdha/uber-ride-analytics-dashboard/data
+
+Model
+https://drive.google.com/file/d/1Svc6hWnXX_REhnTghj4xabXgI4LYcDKf/view?usp=sharing
+
+Deploy
 https://huggingface.co/spaces/jyotis00/deployment
