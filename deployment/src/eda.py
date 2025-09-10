@@ -40,7 +40,7 @@ Jika prediksi ini akurat, sistem dapat:
 
     # tandai booking yang berstatus "No Driver Found"
     df_eda["is_no_driver_found"] = df_eda["Booking Status"].apply(
-        lambda x: 1 if x.strip().lower() == "no driver found" else 0
+        lambda x: 1 if x == "No Driver Found" else 0
     )
 
     st.write('## Top 10 Pickup Location dengan Booking Status = No Driver Found Tertinggi')
@@ -68,13 +68,9 @@ Jika prediksi ini akurat, sistem dapat:
     # visualisasi plotly
     st.write('## Top 10 Pickup Locations dengan Cancel Rate Tertinggi')
 
-    # hilangkan data dengan status "No Driver Found"
-    condition = (df_eda["Booking Status"] == "No Driver Found")
-    df_eda.drop(df_eda[condition].index, inplace=True)
-
     # tandai booking yang berstatus selain "Completed"
     df_eda["is_cancel"] = df_eda["Booking Status"].apply(
-        lambda x: 0 if x.strip().lower() == "completed" else 1
+        lambda x: 1 if (x == 'Cancelled by Driver') or (x == 'Cancelled by Customer') else 0
     )
 
     pickup_cancel_rate = df_eda.groupby("Pickup Location")["is_cancel"].mean()
