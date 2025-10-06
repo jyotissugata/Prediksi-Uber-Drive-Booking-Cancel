@@ -4,16 +4,15 @@
 
 Berikut adalah isi utama repository:
 ```
-1. P1M2_jyotis_sugata.ipynb         - Notebook utama proses EDA, feature engineering, modeling, evaluasi, dan kesimpulan
-2. P1M2_jyotis_sugata_inf.ipynb     - Notebook untuk inferensi model (prediksi booking cancel pada data baru)
-3. P1M2_jyotis_sugata_conceptual.txt - Jawaban dari 3 pertanyaan pada
-4. description.md                   - Penjelasan singkat project ini
-5. url.txt                          - Link dataset, model, dan deployment
-6. Dockerfile                       - Docker untuk deployment HuggingFace Spaces
-7. requirements.txt                 - Semua module yang dibutuhkan untuk deployment
-8. streamlit_app.py                 - Halaman utama dari Deployment HuggingFace Spaces
-9. eda.py                           - Halaman hasil visualisasi eda
-10. predict.py                      - Halaman inferencing untuk user bisa melakukan demo prediksi dengan model yang telah dibuat
+1. notebook.ipynb         - Notebook utama proses EDA, feature engineering, modeling, evaluasi, dan kesimpulan
+2. notebook_inf.ipynb     - Notebook untuk inferensi model (prediksi booking cancel pada data baru)
+3. conceptual.txt - Jawaban dari 3 pertanyaan pada
+4. url.txt                          - Link dataset, model, dan deployment
+5. Dockerfile                       - Docker untuk deployment HuggingFace Spaces
+6. requirements.txt                 - Semua module yang dibutuhkan untuk deployment
+7. streamlit_app.py                 - Halaman utama dari Deployment HuggingFace Spaces
+8. eda.py                           - Halaman hasil visualisasi eda
+9. predict.py                      - Halaman inferencing untuk user bisa melakukan demo prediksi dengan model yang telah dibuat
 ```
 
 ## Problem Background
